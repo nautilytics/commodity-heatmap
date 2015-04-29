@@ -14,6 +14,13 @@ app.set('view engine', 'jade');
 // make express look in the public directory for assets (css/js/img)
 app.use(express.static(__dirname + '/public'));
 
+// enable CORS
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 // set the home page route
 app.get('/', function (req, res) {
     res.render('index', {port: port});
