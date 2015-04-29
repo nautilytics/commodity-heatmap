@@ -1,5 +1,5 @@
 function getQuoteData() {
-    $.get(serverUrl + "/getQuotes", function (a) {
+    $.get("/getQuotes", function (a) {
         var b = new Date(a.timestamp);
         $("#time-retrieved").text(b.toDateString() + " " + b.toTimeString()), nearestToExpirationContracts = a.NearestToExpirationContracts, root.name = a.name, root.children = a.children, fadeOutLoader(), drawTreeMap()
     })
