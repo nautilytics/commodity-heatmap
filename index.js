@@ -23,7 +23,7 @@ app.use(function (req, res, next) {
 
 // set the home page route
 app.get('/', function (req, res) {
-    res.render('index', {port: port});
+    res.render('index');
 });
 
 var commodityCodes = {
