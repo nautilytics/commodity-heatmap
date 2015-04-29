@@ -1,0 +1,20 @@
+{
+  "name": "Commodity-Market-Heatmap",
+  "version": "0.0.1",
+  "description": "A zoomable heatmap of the commodity futures market based on futures quote data from Agricharts",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "heatmap",
+    "commodities"
+  ],
+  "author": "Nautilytics, LLC",
+  "dependencies": {
+    "express": "^4.12.3",
+    "jade": "^1.9.2",
+    "lodash": "^3.7.0",
+    "request": "^2.55.0"
+  }
+}

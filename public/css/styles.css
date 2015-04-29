@@ -1,0 +1,159 @@
+body, html {
+    overflow: hidden;
+    font-size: 12px;
+    font-family: "Helvetica Neue", Helvetica;
+    width: 1000px;
+}
+
+.header {
+    display: block;
+    font-size: 16px;
+    height: 50px;
+    weight: 1000px;
+    text-shadow: 0 1px 0 #fff;
+    margin: 10px;
+}
+
+.header div {
+    display: inline;
+}
+
+.header p {
+    float: right;
+}
+
+#logo {
+    margin-left: 30px;
+}
+
+.header form {
+    margin-top: 15px;
+    float: right;
+    visibility: hidden;
+}
+
+.header p {
+    float: left;
+}
+
+.footer form {
+    margin-top: 15px;
+}
+
+.source {
+    width: 250px;
+}
+
+/***********************/
+
+/* Preloader */
+
+#preloader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff; /* change if the mask should have another color then white */
+    z-index: 99; /* makes sure it stays on top */
+}
+
+#preloader .logo {
+    width: 468px;
+    height: 220px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url('https://nautilytics.blob.core.windows.net/images/logo2.png');
+}
+
+#status {
+    width: 50px;
+    height: 50px;
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    background: url('https://nautilytics.blob.core.windows.net/images/status.gif') no-repeat center;
+}
+
+svg {
+    overflow: hidden;
+}
+
+rect {
+    pointer-events: all;
+    stroke: #EEEEEE;
+}
+
+.chart {
+    display: block;
+    margin: auto;
+}
+
+.label {
+    margin: 2px;
+    white-space: pre;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.parent .label {
+    fill: #FFFFFF;
+}
+
+.cell {
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.footer div {
+    float: left;
+    padding-right: 10%;
+}
+
+#cell-number-selection {
+    float: right;
+}
+
+.legend rect {
+    stroke: none;
+}
+
+.legend-title,
+.legend-tick,
+.legend text,
+.title,
+.year {
+    color: #000000;
+}
+
+.legend text {
+    font-size: 1em;
+}
+
+.legend-title {
+    font-size: 2em;
+}
+
+/* Tooltip Styles */
+#tooltip {
+    position: absolute;
+    visibility: hidden;
+}
+
+/* jquery UI tool tip */
+.ui-tooltip {
+    background: rgba(0, 0, 0, 0.70);
+    border: 2px solid white;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 20px;
+    font: bold 12px "Helvetica Neue", Sans-Serif;
+    text-transform: uppercase;
+    box-shadow: 0 0 7px black;
+    text-align: center;
+    line-height: 5px;
+}
+
+.clear {
+    clear: both;
+}

@@ -1,0 +1,85 @@
+﻿block vars
+doctype html
+html
+    head
+        meta(charset='utf-8')
+
+        // Always force latest IE rendering engine or request Chrome Frame
+        meta(content='IE=edge,chrome=1', http-equiv='X-UA-Compatible')
+
+        // Get port variable from server to create the API route
+        script.
+            var port = "#{port}";
+            var serverUrl = "http://localhost:" + port;
+
+        title Real-time Zoomable Heatmap of the Commodity Market
+        meta(content='Real-time Zoomable Heatmap of the Commodity Market', name='description')
+        script(type="text/javascript", src='js/vendor/d3.v3.min.js')
+        script(type="text/javascript", src='js/vendor/colorbrewer.v1.min.js')
+        script(type="text/javascript", src="js/vendor/jquery.1.11.1.min.js")
+        link(rel="stylesheet", href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css")
+        script(type="text/javascript", src="js/vendor/jquery-ui.1.9.2.min.js")
+        link(type='text/css', rel='stylesheet', href='css/styles.css')
+    body
+        // Begin: Preloader
+        #preloader
+            .statusBox
+                #status &nbsp;
+                .logo
+        // End: Preloader
+
+        // Begin: HTML Structure of the Hover Tooltip
+        #tooltip
+            p#contract-month(href="")
+            p Last:&nbsp;
+                span#contract-last
+            p#contract-change
+            p#contract-pchange
+            p Volume:&nbsp;
+                span#contract-volume
+            p Open Interest:&nbsp;
+                span#contract-open-interest
+            p#contract-time
+        // End: HTML Structure of the Hover Tooltip
+
+        // Begin: Treemap
+        .header
+            p Quotes Retrieved on&nbsp;
+                span#time-retrieved
+
+            #logo
+                a(href="http://www.nautilytics.com", target="_blank")
+                    img(src='img/created_by_logo_trimmed.png')
+
+            form#area-selection(title="Change Contract Area")
+                label Count
+                    input(type="radio", name="mode", value="count", checked)
+                label Volume
+                    input(type="radio", name="mode", value="volume")
+                label Open Interest
+                    input(type="radio", name="mode", value="open_interest")
+            .clear
+        #main
+        .footer
+            .source
+                span <b>Source: </b>
+                    a(href="http://www.agricharts.com/", target="_blank") AgriCharts
+            .legend
+
+            form#cell-number-selection(title="Filter Visible Contracts")
+                label All
+                    input(type="radio", name="cell-count", value="all", checked)
+                label Nearest to Expiration
+                    input(type="radio", name="cell-count", value="nearest")
+        // End: Treemap
+
+    // Begin: Tooltip Guidance
+    script.
+        $(function () {
+            // Select all desired input fields and attach tooltips to them
+            $("form").tooltip({
+                opacity: 0.7
+            });
+        });
+    // End: Tooltip Guidance
+    script(type="text/javascript", src="js/treemap.js")
